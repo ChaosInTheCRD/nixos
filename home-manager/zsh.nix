@@ -15,7 +15,7 @@ let
     garbage-collect = "sudo nix-collect-garbage -d";
     programs        = "vim /etc/nixos/home-manager/programs.nix";
     links           = "vim /etc/nixos/modules/links.nix";
-    purple          = "vim /etc/nixos/machines/aarch64-linux/purple.nix";
+    petal          = "vim /etc/nixos/machines/x86_64-linux/petal.nix";
     hist            = "rm -f $HOME/.zsh_history && ln -s /persist/home/.zsh_history $HOME/.zsh_history";
     screen          = "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Wayfire && systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr && systemctl --user start wireplumber";
     sshbye          = "gpg-connect-agent updatestartuptty /bye";
