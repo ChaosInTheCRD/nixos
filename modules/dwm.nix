@@ -5,7 +5,7 @@ let
   cfg = config.services.tom.dwm;
 
   wallpaper = pkgs.fetchurl {
-    url = "https://github.com/tomVanL/imgs/raw/main/wallpaper-2.jpg";
+    url = "https://github.com/joshVanL/imgs/raw/main/wallpaper-2.jpg";
     hash = "sha256-8JkbnfF033XPiBETWQ5G6RCmBmXtx9f/SsfYU7ObnwY=";
   };
 
