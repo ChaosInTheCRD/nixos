@@ -2,9 +2,9 @@
 
 with lib;
 let
-  cfg = config.services.josh.docker;
+  cfg = config.services.tom.docker;
 in {
-  options.services.josh.docker = {
+  options.services.tom.docker = {
     enable = mkEnableOption "docker";
   };
 

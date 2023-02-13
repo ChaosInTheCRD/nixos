@@ -79,10 +79,10 @@ do
 	break
 done
 
-info "Enter password for 'josh' user ..."
+info "Enter password for 'tom' user ..."
 mkdir -p /mnt/keep/etc/users
 mkdir -p /etc/users
-mkpasswd -m sha-512 | tr -d "\n\r" > /tmp/josh
+mkpasswd -m sha-512 | tr -d "\n\r" > /tmp/tom
 
 ################################################################################
 
@@ -173,14 +173,14 @@ mount -t zfs "$ZFS_DS_PERSIST" /mnt/persist
 info "Moving password to installation ..."
 mkdir -p /mnt/keep/etc/users
 mkdir -p /etc/users
-mv /tmp/josh /mnt/keep/etc/users/josh
-cp /mnt/keep/etc/users/josh /etc/users/josh
+mv /tmp/tom /mnt/keep/etc/users/tom
+cp /mnt/keep/etc/users/tom /etc/users/tom
 
 info "Cloning NixOS configuration to /mnt/keep/etc/nixos/ ..."
 mkdir -p /mnt/keep/etc/nixos
 cd /mnt/keep/etc/nixos
 git init
-git remote add origin https://github.com/joshvanl/nixos.git
+git remote add origin https://github.com/chaosinthecrd/nixos.git
 git pull origin main
 cd -
 

@@ -3,8 +3,8 @@
 {
   programs.git = {
     enable = true;
-    userEmail = "me@joshvanl.dev";
-    userName  = "joshvanl";
+    userEmail = "thomas.meadows@jetstack.io";
+    userName  = "chaosinthecrd";
     ignores = [
       "*.swp"
       ".envrc"

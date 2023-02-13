@@ -4,7 +4,7 @@
   # Nix.
   nix = {
     settings = {
-      allowed-users       = [ "root" "josh"];
+      allowed-users       = [ "root" "tom"];
       auto-optimise-store = true;
     };
 
@@ -14,7 +14,7 @@
       options = "--delete-older-than 7d";
     };
 
-    settings.trusted-users = [ "root" "josh" ];
+    settings.trusted-users = [ "root" "tom" ];
 
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -70,18 +70,18 @@
   security.rtkit.enable = true;
 
   environment.variables = { EDITOR = "vim"; };
-  services.josh.links.enable = true;
+  services.tom.links.enable = true;
 
   # Users.
   users = {
     defaultUserShell = pkgs.zsh;
     mutableUsers = false;
     users = {
-      josh = {
+      tom = {
         isNormalUser = true;
         uid = 1000;
         createHome = true;
-        home = "/home/josh";
+        home = "/home/tom";
         group = "users";
         extraGroups = [
           "wheel"
@@ -89,7 +89,7 @@
           "video"
           "docker"
         ];
-        passwordFile = "/keep/etc/users/josh";
+        passwordFile = "/keep/etc/users/tom";
       };
       root = {
         hashedPassword = "!";

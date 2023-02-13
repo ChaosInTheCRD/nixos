@@ -6,7 +6,7 @@ let
 in
 {
   options.gcloud = {
-    enable = mkEnableOption "josh glcoud";
+    enable = mkEnableOption "tom glcoud";
   };
 
   config = mkIf cfg.enable {

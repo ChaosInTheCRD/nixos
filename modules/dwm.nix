@@ -2,10 +2,10 @@
 
 with lib;
 let
-  cfg = config.services.josh.dwm;
+  cfg = config.services.tom.dwm;
 
   wallpaper = pkgs.fetchurl {
-    url = "https://github.com/JoshVanL/imgs/raw/main/wallpaper-2.jpg";
+    url = "https://github.com/tomVanL/imgs/raw/main/wallpaper-2.jpg";
     hash = "sha256-8JkbnfF033XPiBETWQ5G6RCmBmXtx9f/SsfYU7ObnwY=";
   };
 
@@ -20,7 +20,7 @@ let
     ${pkgs.dwm}/bin/dwm
   '';
 in {
-  options.services.josh.dwm = {
+  options.services.tom.dwm = {
     enable = mkEnableOption "dwm";
 
     xrandr = mkOption {
@@ -60,7 +60,7 @@ in {
     ];
 
     systemd.tmpfiles.rules = [
-      "L+ /home/josh/.xinitrc - - - - ${xinitrc}"
+      "L+ /home/tom/.xinitrc - - - - ${xinitrc}"
     ];
   };
 }

@@ -82,7 +82,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.josh = { pkgs, lib, ... }: with lib; {
+            home-manager.users.tom = { pkgs, lib, ... }: with lib; {
               imports = mapAttrsToList (name: _: ./home-manager/${name}) (filterAttrs
                  (name: entryType: hasSuffix ".nix" name && entryType == "regular")
                  (builtins.readDir ./home-manager)
