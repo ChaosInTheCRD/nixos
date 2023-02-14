@@ -55,6 +55,5 @@
     paranoia
     dapr-cli
     gotestsum
-    mockery
   ];
 }
