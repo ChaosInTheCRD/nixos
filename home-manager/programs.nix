@@ -14,10 +14,10 @@
     bat
     fzf
     pulseaudio
-    backblaze-b2
+    # backblaze-b2
     zip unzip
     git-extras
-    bitwarden-cli
+    # bitwarden-cli
     fast-cli
     ripgrep
 
@@ -32,6 +32,6 @@
     slurp
     direnv
     tree
-    cachix
+    # cachix
   ];
 }

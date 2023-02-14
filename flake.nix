@@ -25,20 +25,9 @@
 
 
     pkgsConfig = {
-      packageOverrides = pkgs: with pkgs; {
-        go-jwt = pkgs.callPackage ./pkgs/go-jwt {};
-        gomarkdoc = pkgs.callPackage ./pkgs/gomarkdoc {};
-        go-protobuf = pkgs.callPackage ./pkgs/go-protobuf {};
-        go-protobuf-grpc = pkgs.callPackage ./pkgs/go-protobuf-grpc {};
-        kind = pkgs.callPackage ./pkgs/kind {};
-        paranoia = pkgs.callPackage ./pkgs/paranoia {};
-        vcert = pkgs.callPackage ./pkgs/vcert {};
+      packageOverrides = pkgs: with pkgs; { 
         gke-gcloud-auth-plugin = pkgs.callPackage ./pkgs/gke-gcloud-auth-plugin {};
-        zfs_uploader = pkgs.callPackage ./pkgs/zfs_uploader {
-          python3 = pkgs.python3;
-          python3Packages = pkgs.python3Packages;
-        };
-      };
+     };
     };
 
     nixosModulesPkgs = sys: {
@@ -107,16 +96,7 @@
 
       in
       rec {
-        packages = {
-          go-jwt = pkgs.go-jwt;
-          gomarkdoc = pkgs.gomarkdoc;
-          go-protobuf = pkgs.go-protobuf;
-          go-protobuf-grpc = pkgs.go-protobuf-grpc;
-          kind = pkgs.kind;
-          paranoia = pkgs.paranoia;
-          vcert = pkgs.vcert;
-          zfs_uploader = pkgs.zfs_uploader;
-        };
+        packages = {};
       }
     ) // {
 
