@@ -23,7 +23,7 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-info "Changing ownership of /keep/etc/nixos to josh ..."
+info "Changing ownership of /keep/etc/nixos to tom ..."
 chown -R tom:wheel /keep/etc/nixos
 
 info "Setting correct remote git for nixos ..."
