@@ -15,7 +15,6 @@
   };
 
   services.tom = {
-    docker.enable = true;
     dwm = {
       enable = true;
       xrandr = "--output Virtual-1 --mode 4096x2160 --output Virtual-2 --off";
@@ -37,7 +36,6 @@
     brightnessctl
     kubectl
     kind
-    helm
     cmctl
     python3
     imagemagick

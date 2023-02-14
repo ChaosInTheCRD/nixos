@@ -30,7 +30,6 @@
         gomarkdoc = pkgs.callPackage ./pkgs/gomarkdoc {};
         go-protobuf = pkgs.callPackage ./pkgs/go-protobuf {};
         go-protobuf-grpc = pkgs.callPackage ./pkgs/go-protobuf-grpc {};
-        helm = pkgs.callPackage ./pkgs/helm {};
         kind = pkgs.callPackage ./pkgs/kind {};
         paranoia = pkgs.callPackage ./pkgs/paranoia {};
         vcert = pkgs.callPackage ./pkgs/vcert {};
@@ -39,7 +38,6 @@
           python3 = pkgs.python3;
           python3Packages = pkgs.python3Packages;
         };
-        mockery = pkgs.callPackage ./pkgs/mockery {};
       };
     };
 
@@ -114,7 +112,6 @@
           gomarkdoc = pkgs.gomarkdoc;
           go-protobuf = pkgs.go-protobuf;
           go-protobuf-grpc = pkgs.go-protobuf-grpc;
-          helm = pkgs.helm;
           kind = pkgs.kind;
           paranoia = pkgs.paranoia;
           vcert = pkgs.vcert;
