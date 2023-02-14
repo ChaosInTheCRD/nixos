@@ -73,34 +73,34 @@ export ZFS_BLANK_SNAPSHOT="${ZFS_DS_ROOT}@blank"
 
 ################################################################################
 
-info "Running the UEFI (GPT) partitioning and formatting directions from the NixOS manual ..."
-parted "$DISK_PATH" -- mklabel gpt
-parted "$DISK_PATH" -- mkpart primary 512MiB 100%
-parted "$DISK_PATH" -- mkpart ESP fat32 1MiB 512MiB
-parted "$DISK_PATH" -- set 2 boot on
-export DISK_PART_ROOT="${DISK_PATH}1"
-export DISK_PART_BOOT="${DISK_PATH}2"
+# info "Running the UEFI (GPT) partitioning and formatting directions from the NixOS manual ..."
+# parted "$DISK_PATH" -- mklabel gpt
+# parted "$DISK_PATH" -- mkpart primary 512MiB 100%
+# parted "$DISK_PATH" -- mkpart ESP fat32 1MiB 512MiB
+# parted "$DISK_PATH" -- set 2 boot on
+# export DISK_PART_ROOT="${DISK_PATH}1"
+# export DISK_PART_BOOT="${DISK_PATH}2"
 
-info "Formatting boot partition ..."
-mkfs.fat -F 32 -n boot "$DISK_PART_BOOT"
-
-info "Creating '$ZFS_POOL' ZFS pool for '$DISK_PART_ROOT' ..."
-zpool create -f "$ZFS_POOL" "$DISK_PART_ROOT"
-
-info "Enabling compression for '$ZFS_POOL' ZFS pool ..."
-zfs set compression=on "$ZFS_POOL"
-
-info "Creating '$ZFS_DS_ROOT' ZFS dataset ..."
-zfs create -p -o mountpoint=legacy "$ZFS_DS_ROOT"
-
-info "Configuring extended attributes setting for '$ZFS_DS_ROOT' ZFS dataset ..."
-zfs set xattr=sa "$ZFS_DS_ROOT"
-
-info "Configuring access control list setting for '$ZFS_DS_ROOT' ZFS dataset ..."
-zfs set acltype=posixacl "$ZFS_DS_ROOT"
-
-info "Creating '$ZFS_BLANK_SNAPSHOT' ZFS snapshot ..."
-zfs snapshot "$ZFS_BLANK_SNAPSHOT"
+# info "Formatting boot partition ..."
+# mkfs.fat -F 32 -n boot "$DISK_PART_BOOT"
+#
+# info "Creating '$ZFS_POOL' ZFS pool for '$DISK_PART_ROOT' ..."
+# zpool create -f "$ZFS_POOL" "$DISK_PART_ROOT"
+#
+# info "Enabling compression for '$ZFS_POOL' ZFS pool ..."
+# zfs set compression=on "$ZFS_POOL"
+#
+# info "Creating '$ZFS_DS_ROOT' ZFS dataset ..."
+# zfs create -p -o mountpoint=legacy "$ZFS_DS_ROOT"
+#
+# info "Configuring extended attributes setting for '$ZFS_DS_ROOT' ZFS dataset ..."
+# zfs set xattr=sa "$ZFS_DS_ROOT"
+#
+# info "Configuring access control list setting for '$ZFS_DS_ROOT' ZFS dataset ..."
+# zfs set acltype=posixacl "$ZFS_DS_ROOT"
+#
+# info "Creating '$ZFS_BLANK_SNAPSHOT' ZFS snapshot ..."
+# zfs snapshot "$ZFS_BLANK_SNAPSHOT"
 
 info "Mounting '$ZFS_DS_ROOT' to /mnt ..."
 mount -t zfs "$ZFS_DS_ROOT" /mnt
