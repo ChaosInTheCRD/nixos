@@ -35,25 +35,12 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     kubectl
-    kind
-    cmctl
     python3
     imagemagick
-    go-jwt
     envsubst
-    postgresql
-    step-cli
     git-crypt
     age
     terraform
     dive
-    vcert
-    protobuf
-    go-protobuf
-    go-protobuf-grpc
-    gomarkdoc
-    paranoia
-    dapr-cli
-    gotestsum
   ];
 }
