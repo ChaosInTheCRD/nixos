@@ -221,6 +221,7 @@ cat <<EOF > /mnt/persist/etc/nixos/configuration.nix
         initialHashedPassword = "${ROOT_PASSWORD_HASH}";
       };
       ${USER_NAME} = {
+        isNormalUser = true;
         createHome = true;
         initialHashedPassword = "${USER_PASSWORD_HASH}";
 	extraGroups = [ "wheel" ];
