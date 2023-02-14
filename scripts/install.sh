@@ -180,7 +180,7 @@ info "Cloning NixOS configuration to /mnt/keep/etc/nixos/ ..."
 mkdir -p /mnt/keep/etc/nixos
 cd /mnt/keep/etc/nixos
 git init
-git remote add origin https://github.com/tomvanl/nixos.git
+git remote add origin https://github.com/chaosinthecrd/nixos.git
 git pull origin main
 cd -
 
