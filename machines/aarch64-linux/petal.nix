@@ -10,7 +10,7 @@
 
   networking = {
     interfaces.enp0s5.useDHCP = true;
-    hostName = "purple";
+    hostName = "petal";
     hostId = "deadbeef";
   };
 
@@ -35,25 +35,12 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     kubectl
-    kind
-    cmctl
     python3
     imagemagick
-    go-jwt
     envsubst
-    postgresql
-    step-cli
     git-crypt
     age
     terraform
     dive
-    vcert
-    protobuf
-    go-protobuf
-    go-protobuf-grpc
-    gomarkdoc
-    paranoia
-    dapr-cli
-    gotestsum
   ];
 }
