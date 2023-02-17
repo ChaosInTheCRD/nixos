@@ -82,12 +82,6 @@ in {
       };
     };
 
-    "imgs/system/wallpaper.jpg" = {
-      source = pkgs.fetchurl {
-        url = "https://github.com/JoshVanL/imgs/raw/main/wallpaper-2.jpg";
-        hash = "sha256-8JkbnfF033XPiBETWQ5G6RCmBmXtx9f/SsfYU7ObnwY=";
-      };
-    };
   };
 
   programs.zsh = {
