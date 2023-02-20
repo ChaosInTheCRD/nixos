@@ -1,6 +1,5 @@
 {
   inputs = {
-    #nixpkgs.url = "github:nixos/nixpkgs/release-22.11";
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
@@ -85,7 +84,7 @@
     };
 
   in
-  flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ]
+  flake-utils.lib.eachSystem [ aarch64-linux" ]
     (system:
       let
         pkgs = (import nixpkgs) {
@@ -102,10 +101,6 @@
 
     nixosConfigurations = builtins.listToAttrs (
       nixpkgs.lib.flatten (
-        (map
-          ( machine: [ (build-machine machine "x86_64-linux") ])
-          (machines "x86_64-linux"))
-        ++
         (map
           ( machine: [ (build-machine machine "aarch64-linux") ])
           (machines "aarch64-linux"))
